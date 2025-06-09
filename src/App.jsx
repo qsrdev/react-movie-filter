@@ -3,8 +3,8 @@ import moovies from "../data/array.js";
 import "./App.css";
 
 function App() {
-  const [selectedGenre, setselectedGenre] = useState("No Filter");
   const genres = ["No Filter", "Fantascienza", "Thriller", "Romantico", "Azione"];
+  const [selectedGenre, setselectedGenre] = useState("No Filter");
   const [mooviesFiltered, setmooviesFiltered] = useState(moovies);
 
   useEffect(() => {
@@ -21,7 +21,7 @@ function App() {
       <div>
         <h1 className="text-center">Moovies</h1>
         <div className="container my-3">
-          <select value={selectedGenre} onChange={(event) => setselectedGenre(event.target.value)}>
+          <select className="mb-3" value={selectedGenre} onChange={(event) => setselectedGenre(event.target.value)}>
             {genres.map((curGenre, index) => (
               <option key={index} value={curGenre}>
                 {curGenre}
